@@ -1,0 +1,2 @@
+cucumber-reports:4.4.0
+cucumber-testresult-plugin:0.10.1

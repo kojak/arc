@@ -1,0 +1,32 @@
+# Override configuration from https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml
+exposecontroller:
+  exposecontroller:
+    HTTP: "true"
+    TLSACME: "false"
+
+chartmuseum:
+  enabled: true
+
+monocular:
+  enabled: false
+
+nexus:
+  enabled: false
+
+docker-registry:
+  enabled: true
+
+gitea:
+  enabled: true
+
+jenkins:
+  Master:
+    Image: "sbadakhc/jenkinsx"
+    ImageTag: "latest"
+  Agent:
+    PodTemplates:
+      Gradle:
+        Containers:
+          Gradle:
+            RequestMemory: "2028Mi"
+            LimitMemory: "4096Mi"
