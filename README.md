@@ -1,4 +1,4 @@
-# ARC is and implementation of the Autonomous Remote Collaboration pattern.
+# ARC.
 Install minikube and jx using the links to the resources below.
 
 ## Resources.
