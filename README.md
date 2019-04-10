@@ -1,4 +1,4 @@
-# ARC.
+# ARC
 Install minikube and jx using the links to the resources below.
 
 ## Resources.
