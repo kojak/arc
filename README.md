@@ -33,16 +33,6 @@ Maintainer workflow - list pull request, branch feature, merge feature, commit &
 
 ## Prerequisites 
 
-Fork all the biomex repos owned by the top level maintainer via the Bitbucket GUI. Currectly all repos are maintained by sbadakhc. 
-
-## Clone your forks.
-
-Use the ssh protocol and your attlassion user name.
-
-```
-git clone git@bitbucket.org:<username>/biomex-sdlc.git
-```
-
 Create the env.vars file in the cloned repo directory with your github credentials and api key.
 
 ```
@@ -72,7 +62,7 @@ minikube dashboard
 jx open jenkins
 ```
 
-## Import the biomex repos and attempt a build.
+## Import your repos and attempt a build.
 
 ```
 jx import --no-draft=true --no-jenkinsfile=true <repo>
