@@ -1,4 +1,4 @@
-# Biomex SDLC deployed with Jenkins X on Minikube.
+# ARC is and implementation of the Autonomous Remote Collaboration pattern.
 Install minikube and jx using the links to the resources below.
 
 ## Resources.
