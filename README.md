@@ -1,5 +1,6 @@
 # ARC
-Install minikube and jx using the links to the resources below.
+
+ARC is in an implematation of the Autonomous Remote Collaboration pattern based on JenkinsX running on minikube. This pattern defines pariety between the developers local environment and the cloud. The reasoning for this design is to remove hard dependancies on the cloud when developing cloud native applications.
 
 ## Resources.
 
