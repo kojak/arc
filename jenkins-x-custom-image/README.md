@@ -1,6 +1,6 @@
-# jenkins-x-biomex-image
+# jenkins-x-custom-image
 
-A custom JenkinsX images used to add plugins for the Biomex sdlc circuit.
+A custom JenkinsX images used to add plugins to JenkinsX.
 
 ## Instructions.
 
