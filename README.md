@@ -27,13 +27,10 @@ https://github.com/kubernetes/minikube
 ## Known issues.
 
 ```
-Enable writethrough disk caching on Linux KVM's.
-
-Enable pull request on all repos in Gitea.
-
-Add the Gitea token to the jenkins credentials.
-
-Chech the Workspace Cleanup Plugin version. 
+# Enable writethrough disk caching on Linux KVM's.
+# Enable pull request on all repos in Gitea.
+# Add the Gitea token to the jenkins credentials.
+# Chech the Workspace Cleanup Plugin version. 
 ```
 
 ## ToDo.
