@@ -4,7 +4,7 @@ ARC is in an implementation of the Autonomous Remote Collaboration pattern based
 
 ![Alt text](screenshot.png?raw=true "ARC")
 
-## Techincal detials.
+## Techincal details.
 
 ARC installs JenkinsX on a kubernetes cluster which is deployed via minikube on the developers virtual machine. All the major hypervisors are supported and have been tested on MacOS and Linux. Developers can deploy there preffered tooling as docker containers on their localhost just as they would do on any Kubernetes cluster in cloud.
 
