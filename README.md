@@ -44,6 +44,8 @@ Maintainer workflow - list pull request, branch feature, merge feature, commit &
 
 ## Prerequisites 
 
+Install Minikube and JenkinsX by following the links above to their respective websites. 
+
 Create the env.vars file in the cloned repo directory with your github credentials and api key.
 
 ```
@@ -61,6 +63,7 @@ EMAIL="email"
 ## Verfify the installation.
 
 ```
+eval $(minikube docker-env)
 minikube status
 jx status
 docker images
