@@ -8,10 +8,10 @@ chartmuseum:
   enabled: true
 
 monocular:
-  enabled: false
+  enabled: true
 
 nexus:
-  enabled: false
+  enabled: true
 
 docker-registry:
   enabled: true

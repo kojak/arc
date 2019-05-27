@@ -5,10 +5,9 @@ create_cluster() {
 cluster_opts=(--batch-mode \
 --no-default-environments=true \
 --default-admin-password='password' \
---default-environment-prefix='biomexio' \
+--default-environment-prefix='${USERNAME}' \
 --git-api-token=${TOKEN} \
---git-provider-kind='github' \
---git-provider-url='https://github.com' \
+--git-provider-kind='gitea' \
 --git-username=${USERNAME})
 
 jx create cluster minikube "${cluster_opts[@]}"
@@ -20,6 +19,7 @@ cp -p ~/work/src/bitbucket.org/biomexio/biomex-sdlc/myvalues.yaml ~/.jx/cloud-en
 addon_gitea() {
 
 gitea_opts=(--username=${USERNAME} \
+--namespace=jx \
 --password='password' \
 --email=${EMAIL} \
 --helm-update=true \
@@ -37,8 +37,9 @@ GIT_URL="http://gitea-gitea.jx.$(minikube ip).nip.io"
 
 jx_opts=(--cleanup-temp-files=true \
 --provider=minikube \
+--namespace=jx \
 --default-admin-password='password' \
---default-environment-prefix='biomexio' \
+--default-environment-prefix='${USERNAME}' \
 --git-username=${USERNAME} \
 --git-provider-kind='gitea' \
 --git-provider-url=${GIT_URL})
@@ -55,8 +56,7 @@ read -d '' USAGE <<- EOF
 Usage: deploy [options] 
 -h, --help            show this help message and exit
 -c, --create          create cluster
--i, --install         install jx
--d, --dash            destroy the cluster
+-d, --destroy         destroy the cluster
 EOF
 
 
@@ -70,12 +70,7 @@ case $OPTS in
     addon_gitea
     shift
     ;; 
-    -i|--install)
-    echo "Installing jx"
-    install_jx
-    shift
-    ;;
-    -d| --dash)
+    -d| --destroy)
     echo "Dashing deployment"
     dash_deployment
     shift
