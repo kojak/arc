@@ -19,11 +19,11 @@ cp -p ./myvalues.yaml ~/.jx/cloud-environments/env-minikube/
 addon_gitea() {
 
 gitea_opts=(--username=${USERNAME} \
---namespace='jx' \
---password='password' \
---email='${EMAIL}' \
---helm-update='true' \
---install-dependencies='true')
+--namespace=jx \
+--password=password \
+--email=${EMAIL} \
+--helm-update=true \
+--install-dependencies=true)
     
 jx create addon gitea "${gitea_opts[@]}"
 
@@ -36,13 +36,13 @@ if [[ $(minikube status | grep -q 'stopped') ]]; then echo "minikube up"; else m
 GIT_URL="http://gitea-gitea.jx.$(minikube ip).nip.io"
 
 jx_opts=(--cleanup-temp-files=true \
---provider='minikube' \
---namespace='jx' \
---default-admin-password='password' \
---default-environment-prefix='${USERNAME}' \
---git-username='${USERNAME}' \
---git-provider-kind='gitea' \
---git-provider-url='${GIT_URL}')
+--provider=minikube \
+--namespace=jx \
+--default-admin-password=password \
+--default-environment-prefix=${USERNAME} \
+--git-username=${USERNAME} \
+--git-provider-kind=gitea \
+--git-provider-url=${GIT_URL})
 
 jx install "${jx_opts[@]}"
 
