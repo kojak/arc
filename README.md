@@ -21,6 +21,8 @@ https://github.com/jenkins-x
 
 curl -L https://github.com/jenkins-x/jx/releases/download/[LATEST_VERSION]/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
 sudo mv jx /user/local/bin
+jx completion bash > jx
+sudo mv jx /etc/bash_completion.d/
 ```
 
 # Minikube.
@@ -31,6 +33,8 @@ https://github.com/kubernetes/minikube
 
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64   && chmod +x minikube
 sudo install minikube /usr/local/bin
+minikube completion bash > minikube
+sudo mv minikube /etc/bash_completion.d/
 ```
 
 # Kubectl
