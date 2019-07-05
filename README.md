@@ -12,7 +12,6 @@ ARC installs JenkinsX on a kubernetes cluster which is deployed via minikube on 
 
 Links to useful resources and documentation.
 
-```
 # Jenkins X.
 
 ```
