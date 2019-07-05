@@ -12,7 +12,7 @@ ARC installs JenkinsX on a kubernetes cluster which is deployed via minikube on 
 
 Links to useful resources and documentation.
 
-## Jenkins X.
+## JenkinsX.
 
 ```
 https://jenkins-x.io/getting-started/create-cluster/#using-minikube-local
@@ -36,7 +36,7 @@ minikube completion bash > minikube
 sudo mv minikube /etc/bash_completion.d/
 ```
 
-## Kubectl
+## Kubectl.
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
@@ -54,7 +54,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 # ChecK the Workspace Cleanup Plugin version. 
 ```
 
-## ToDo.
+## To Do.
 
 ```
 Developer workflow - create issue, branch feature, commit & push, pull request. 
