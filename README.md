@@ -57,7 +57,6 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ## ToDo.
 
 ```
-Shell auto completion for minikube and jx.
 Developer workflow - create issue, branch feature, commit & push, pull request. 
 Maintainer workflow - list pull request, branch feature, merge feature, commit & push to master.
 ``` 
