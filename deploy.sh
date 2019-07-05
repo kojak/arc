@@ -12,7 +12,8 @@ cluster_opts=(--batch-mode \
 
 jx create cluster minikube "${cluster_opts[@]}"
 
-cp -p ./myvalues.yaml ~/.jx/cloud-environments/env-minikube/
+[[ -d "${HOME}/.jx/cloud-environments/env-minikube/" ]] || mkdir -p ${HOME}/.jx/cloud-environments/env-minikube/
+cp -p ./myvalues.yaml ${HOME}/.jx/cloud-environments/env-minikube/
 
 }
 

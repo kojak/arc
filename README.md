@@ -48,7 +48,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 # Enable pull request on all repos in Gitea.
 # Add the Gitea token to the jenkins credentials.
 # Update build configuration with the credentials.
-# Chech the Workspace Cleanup Plugin version. 
+# ChecK the Workspace Cleanup Plugin version. 
 ```
 
 ## ToDo.
