@@ -15,13 +15,30 @@ Links to useful resources and documentation.
 ```
 # Jenkins X.
 
+```
 https://jenkins-x.io/getting-started/create-cluster/#using-minikube-local
 https://github.com/jenkins-x
 
+curl -L https://github.com/jenkins-x/jx/releases/download/[LATEST_VERSION]/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
+sudo mv jx /user/local/bin
+```
+
 # Minikube.
 
+```
 https://kubernetes.io/docs/tasks/tools/install-minikube/
 https://github.com/kubernetes/minikube
+
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64   && chmod +x minikube
+sudo install minikube /usr/local/bin
+```
+
+# Kubectl
+
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 
 ## Known issues.
