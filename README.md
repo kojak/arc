@@ -92,7 +92,7 @@ kubectl get po
 ## Access to consoles.
 ```
 minikube dashboard
-jx open jenkins
+jx open
 ```
 
 ## Import your repos and attempt a build.
