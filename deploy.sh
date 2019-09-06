@@ -55,7 +55,6 @@ case $OPTS in
       -c|--create)
       echo "Creating cluster"
       create_cluster
-      addon_gitea
       shift
      ;; 
       -d| --destroy)
