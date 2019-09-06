@@ -3,30 +3,17 @@ source ./env.vars
 create_cluster() {
 
 cluster_opts=(--batch-mode \
---no-default-environments=true \
---default-admin-password='password' \
---default-environment-prefix='${USERNAME}' \
---git-api-token=${TOKEN} \
---git-provider-kind='gitea' \
---git-username=${USERNAME})
+  --no-default-environments=true \
+  --default-admin-password='password' \
+  --default-environment-prefix='${USERNAME}' \
+  --git-api-token=${TOKEN} \
+  --git-provider-kind='gitea' \
+  --git-username=${USERNAME})
 
 jx create cluster minikube "${cluster_opts[@]}"
 
 [[ -d "${HOME}/.jx/cloud-environments/env-minikube/" ]] || mkdir -p ${HOME}/.jx/cloud-environments/env-minikube/
 cp -p ./myvalues.yaml ${HOME}/.jx/cloud-environments/env-minikube/
-
-}
-
-addon_gitea() {
-
-gitea_opts=(--username=${USERNAME} \
---namespace=jx \
---password=password \
---email=${EMAIL} \
---helm-update=true \
---install-dependencies=true)
-    
-jx create addon gitea "${gitea_opts[@]}"
 
 }
 
@@ -37,13 +24,13 @@ if [[ $(minikube status | grep -q 'stopped') ]]; then echo "minikube up"; else m
 GIT_URL="http://gitea-gitea.jx.$(minikube ip).nip.io"
 
 jx_opts=(--cleanup-temp-files=true \
---provider=minikube \
---namespace=jx \
---default-admin-password=password \
---default-environment-prefix=${USERNAME} \
---git-username=${USERNAME} \
---git-provider-kind=gitea \
---git-provider-url=${GIT_URL})
+  --provider=minikube \
+  --namespace=jx \
+  --default-admin-password=password \
+  --default-environment-prefix=${USERNAME} \
+  --git-username=${USERNAME} \
+  --git-provider-kind=gitea \
+  --git-provider-url=${GIT_URL})
 
 jx install "${jx_opts[@]}"
 
@@ -65,26 +52,26 @@ if [[ $# < 1 ]]; then echo "${USAGE}"; fi
 while [[ $# > 0 ]]; do OPTS="$1"; shift
 
 case $OPTS in
-    -c|--create)
-    echo "Creating cluster"
-    create_cluster
-    addon_gitea
-    shift
-    ;; 
-    -d| --destroy)
-    echo "Dashing deployment"
-    dash_deployment
-    shift
-    ;;
-    -h|--help)
-    echo "Help options include"
-    shift
-    ;;
-    *)
-    echo "${USAGE}" # unknown option
-    ;;
-    \?)
-    echo "${USAGE} option" # unknown option
+      -c|--create)
+      echo "Creating cluster"
+      create_cluster
+      addon_gitea
+      shift
+     ;; 
+      -d| --destroy)
+      echo "Dashing deployment"
+      dash_deployment
+      shift
+     ;;
+      -h|--help)
+      echo "Help options include"
+      shift
+     ;;
+      *)
+      echo "${USAGE}" # unknown option
+     ;;
+      \?)
+      echo "${USAGE} option" # unknown option
     ;;
 esac
 done
