@@ -5,19 +5,19 @@ exposecontroller:
     TLSACME: "false"
 
 chartmuseum:
-  enabled: true
+  enabled: false
 
 monocular:
-  enabled: true
+  enabled: false
 
 nexus:
-  enabled: true
+  enabled: false
 
 docker-registry:
   enabled: true
 
 gitea:
-  enabled: true
+  enabled: false
 
 jenkins:
   Master:
