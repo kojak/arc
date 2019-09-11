@@ -20,13 +20,4 @@ gitea:
   enabled: false
 
 jenkins:
-  Master:
-    Image: "sbadakhc/jenkinsx"
-    ImageTag: "latest"
-  Agent:
-    PodTemplates:
-      Gradle:
-        Containers:
-          Gradle:
-            RequestMemory: "2028Mi"
-            LimitMemory: "4096Mi"
+  enabled: true
