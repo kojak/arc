@@ -25,7 +25,7 @@ done
 helm template \
     --name istio \
     --namespace istio-system \
-    --values values-esqimo.yaml \
+    --values values.yaml \
     istio \
     | kubectl apply -f -
 
