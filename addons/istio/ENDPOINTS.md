@@ -1,3 +1,8 @@
+To discover service endoints execute the following command.
+```
+kubectl get ep --all-namespaces
+```
+
 To access endpoints use the following port forwarding command.
 
 ```
