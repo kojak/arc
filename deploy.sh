@@ -3,12 +3,15 @@ source ./env.vars
 create_cluster() {
 
 cluster_opts=(--batch-mode \
-  --no-default-environments=true \
   --default-admin-password='password' \
   --default-environment-prefix='${USERNAME}' \
   --git-api-token=${TOKEN} \
-  --git-provider-kind='gitea' \
-  --git-username=${USERNAME})
+  --git-provider-kind='github' \
+  --git-username=${USERNAME} \
+  --cpu=4 \
+  --disk-size=150GB \
+  --memory=16384MB \
+  --vm-driver='kvm2') 
 
 jx create cluster minikube "${cluster_opts[@]}"
 
@@ -21,15 +24,13 @@ install_jx() {
 
 if [[ $(minikube status | grep -q 'stopped') ]]; then echo "minikube up"; else minikube start; fi
 
-GIT_URL="http://gitea-gitea.jx.$(minikube ip).nip.io"
-
 jx_opts=(--cleanup-temp-files=true \
   --provider=minikube \
   --namespace=jx \
   --default-admin-password=password \
   --default-environment-prefix=${USERNAME} \
   --git-username=${USERNAME} \
-  --git-provider-kind=gitea \
+  --git-provider-kind=github \
   --git-provider-url=${GIT_URL})
 
 jx install "${jx_opts[@]}"
@@ -57,11 +58,16 @@ case $OPTS in
       create_cluster
       shift
      ;; 
-      -d| --destroy)
+      -d|--destroy)
       echo "Dashing deployment"
       dash_deployment
       shift
      ;;
+     -j|--jx)
+      echo "Creating cluster"
+      install_jx
+      shift
+     ;; 
       -h|--help)
       echo "Help options include"
       shift

@@ -11,5 +11,5 @@ kubectl port-forward $(kubectl get pods --selector=app=<app> -n <namespace> --ou
 
 For example to access grafana
 ```
-k port-forward $(kubectl get pods --selector=app=grafana -n istio-system --output=jsonpath="{.items..metadata.name}") -n istio-system 3000
+kubectl port-forward $(kubectl get pods --selector=app=grafana -n istio-system --output=jsonpath="{.items..metadata.name}") -n istio-system 3000
 ```

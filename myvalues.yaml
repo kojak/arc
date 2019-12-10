@@ -14,7 +14,7 @@ nexus:
   enabled: false
 
 docker-registry:
-  enabled: true
+  enabled: false
 
 gitea:
   enabled: false
